@@ -23,9 +23,17 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/lebensmittelid"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/kohlenhydrateid"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" ></TextView>
+    <TextView
+        android:id="@+id/kohlenhydrateid"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/gewichtid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" > </TextView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

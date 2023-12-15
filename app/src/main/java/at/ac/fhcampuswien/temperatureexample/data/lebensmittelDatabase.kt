@@ -5,23 +5,23 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [LebensmittelData::class], version = 1, exportSchema = false)
-abstract class LebensmittelDatabase : RoomDatabase() {
+@Database(entities = [lebensmittelData::class], version = 1, exportSchema = false)
+abstract class lebensmittelDatabase : RoomDatabase() {
 
-    abstract val temperatureDao: LebensmittelDao
+    abstract val temperatureDao: lebensmittelDao
 
     companion object {
         @Volatile
-        private var INSTANCE: LebensmittelDatabase? = null
+        private var INSTANCE: lebensmittelDatabase? = null
 
-        fun getInstance(context: Context): LebensmittelDatabase {
+        fun getInstance(context: Context): lebensmittelDatabase {
             synchronized(this) {
                 var instance = INSTANCE
 
                 if (instance == null) {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
-                        LebensmittelDatabase::class.java,
+                        lebensmittelDatabase::class.java,
                         "lebensmittel_database")
                         .fallbackToDestructiveMigration()
                         .allowMainThreadQueries()
