@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "APP_Lebensmittel"
+rootProject.name = "APP_LebensmittelSQLite"
