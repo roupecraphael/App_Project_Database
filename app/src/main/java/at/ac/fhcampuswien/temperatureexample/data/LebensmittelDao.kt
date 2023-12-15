@@ -22,4 +22,10 @@ interface LebensmittelDao {
 
     @Query("SELECT * FROM lebensmittel_data")
     fun getAllLocations(): List<LebensmittelData>
+
+    @Query("DELETE from lebensmittel_data WHERE dataId= :key")
+    fun delete(key:Long): Int
+
+    @Query("DELETE FROM lebensmittel_data")
+    fun deleteAll(): Void
 }

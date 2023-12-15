@@ -11,10 +11,16 @@ data class LebensmittelData(
     @ColumnInfo(name = "Lebensmittel")
     var lebensmittel: String,
     @ColumnInfo(name = "Gewicht")
-    var gewicht: Long
+    var gewicht: Long,
+    @ColumnInfo(name = "Kohlenhydrate")
+var kohlenhydrate: Long
 ) {
     val celsiusText: String
     get() {
         return "$gewicht KG."
     }
+    val kohlenhydrateText: String
+        get() {
+            return "$kohlenhydrate kcal."
+        }
 }
