@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
 // the following class is used to create a second activity that is called when the button is pressed and displays the data -----//
 // from the database in a recycler view  ---------------------------------------------------------------------------------------//
 class SecondActivity : AppCompatActivity() {
@@ -86,7 +85,6 @@ class SecondActivity : AppCompatActivity() {
         view.layoutManager = LinearLayoutManager(this)
     }
 }
-
 // the following class Viewholder is used to bind the R.id.lebensmittelid, R.id.gewichtid and R.id.kohlenhydrateid to  ---------//
 // variables so they can be used by recycler view in the second activity -------------------------------------------------------//
 class LebensmittelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -94,7 +92,6 @@ class LebensmittelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     val gewicht: TextView = itemView.findViewById(R.id.gewichtid)
     val kohlenhydrate: TextView = itemView.findViewById(R.id.kohlenhydrateid)
 }
-
 // the following class is used to create an adapter that is used by the ViewHolder to update the display of the data -----------//
 // from the database in the second activity ------------------------------------------------------------------------------------//
 class LebensmittelAdapter(private val lebensmittelList: List<LebensmittelData>) :
@@ -105,7 +102,6 @@ class LebensmittelAdapter(private val lebensmittelList: List<LebensmittelData>) 
             .inflate(R.layout.item_database, parent, false)
         return LebensmittelViewHolder(view)
     }
-
     // the following functions are used to bind the data from the database to the ViewHolder -----------------------------------//
     override fun onBindViewHolder(holder: LebensmittelViewHolder, position: Int) {
         val lebensmittel = lebensmittelList[position]
@@ -113,7 +109,6 @@ class LebensmittelAdapter(private val lebensmittelList: List<LebensmittelData>) 
         holder.gewicht.text = lebensmittel.gewicht.toString()
         holder.kohlenhydrate.text = lebensmittel.kohlenhydrate.toString()
     }
-
     // the following function is used to get the number of items in the database -----------------------------------------------//
     override fun getItemCount() = lebensmittelList.size
 }

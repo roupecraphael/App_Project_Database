@@ -2,20 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
         <variable
             name="temp"
             type="at.ac.fhcampuswien.temperatureexample.data.LebensmittelData" />
     </data>
+    <!-- Path: app/src/main/res/layout/activity_main.xml constraint layout-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
         android:padding="16dp"
         >
-
-
+        <!-- TextView to display what the activity is for -->
         <TextView
             android:id="@+id/text"
             android:layout_width="0dp"
@@ -27,7 +26,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints"></TextView>
-
+        <!-- EditText to enter the name of the provision -->
         <EditText
             android:id="@+id/lebensmittel"
             android:layout_width="match_parent"
@@ -40,7 +39,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"></EditText>
-
+        <!-- EditText to enter the weight of the provision -->
         <EditText
             android:id="@+id/gewicht"
             android:layout_width="match_parent"
@@ -53,6 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
+        <!-- EditText to enter the kcal/g of the provision -->
         <EditText
             android:id="@+id/kohlenhydrate"
             android:layout_width="match_parent"
@@ -65,7 +65,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints" />
-
+        <!-- Button to add the provision to the database -->
         <Button
             android:id="@+id/adddata"
             android:layout_width="match_parent"
@@ -77,7 +77,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:text="Add Provision"
             />
-
+        <!-- Button to show the saved provisions -->
         <Button
             android:id="@+id/showdata"
             android:layout_width="match_parent"

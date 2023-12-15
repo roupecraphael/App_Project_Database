@@ -2,18 +2,17 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
     <data>
         <variable
             name="temp"
             type="at.ac.fhcampuswien.temperatureexample.data.LebensmittelData" />
     </data>
+    <!-- Path: app/src/main/res/layout/activity_main.xml constraint layout-->
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity" >
-
-
+    <!-- recyclerView to display what the is in the database -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/LebensmittelListe"
         app:layout_constraintBottom_toBottomOf="parent"
