@@ -7,7 +7,7 @@
     android:orientation="horizontal"
     android:paddingTop="10dp"
     android:paddingBottom="10dp">
-
+    <!-- TextView to display first entry of database -->
     <TextView
         android:id="@+id/lebensmittelid"
         android:layout_width="0dp"
@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
-
+    <!-- TextView to display second entry of database -->
     <TextView
         android:id="@+id/gewichtid"
         android:layout_width="50dp"
@@ -26,6 +26,7 @@
         app:layout_constraintEnd_toStartOf="@id/kohlenhydrateid"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" ></TextView>
+    <!-- TextView to display third entry of database -->
     <TextView
         android:id="@+id/kohlenhydrateid"
         android:layout_width="50dp"
@@ -34,6 +35,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" > </TextView>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
