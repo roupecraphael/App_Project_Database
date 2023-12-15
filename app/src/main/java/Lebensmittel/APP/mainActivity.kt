@@ -1,5 +1,4 @@
-package at.ac.fhcampuswien.temperatureexample
-
+package APP
 // import all necessary external libraries here ----------------------------------------------------------------------------//
 import android.content.Intent
 import android.os.Bundle
@@ -14,15 +13,15 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 // import all necessary internal classes here-------------------------------------------------------------------------------//
-import at.ac.fhcampuswien.temperatureexample.data.LebensmittelData
-import at.ac.fhcampuswien.temperatureexample.data.lebensmittelDatabase
-import at.ac.fhcampuswien.temperatureexample.databinding.ActivityMainBinding
-import at.ac.fhcampuswien.temperatureexample.databinding.ActivitySecondBinding
+import APP.data.lebensmittelData
+import APP.data.lebensmittelDatabase
+import APP.databinding.ActivitySecondBinding
+
 // this is the main activity class that is called when the app is started --------------------------------------------------//
 class MainActivity : AppCompatActivity() {
 // Private variables are declared here -------------------------------------------------------------------------------------//
     private lateinit var binding: ActivityMainBinding
-    private var locations = listOf<LebensmittelData>()
+    private var locations = listOf<lebensmittelData>()
     private var index = 0
 // overide function is called when the app is started ----------------------------------------------------------------------//
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         val GewichtView: EditText = findViewById(R.id.gewicht)
         val KohlenhydrateView: EditText = findViewById(R.id.kohlenhydrate)
 //the following values are used to create a database and insert data into it -----------------------------------------------//
-        val db = LebensmittelDatabase.getInstance(applicationContext)
+        val db = lebensmittelDatabase.getInstance(applicationContext)
         val dao = db.temperatureDao
         locations = dao.getAllLocations()
         binding.temp = locations[0]
@@ -59,7 +58,7 @@ class MainActivity : AppCompatActivity() {
             val gewichtdaten = GewichtView.text.toString().toLong()
             val kohlenhydratedaten = KohlenhydrateView.text.toString().toLong()
             val tempData =
-                LebensmittelData(lebensmittel = lebensmitteldaten, gewicht = gewichtdaten, kohlenhydrate = kohlenhydratedaten)
+                lebensmittelData(lebensmittel = lebensmitteldaten, gewicht = gewichtdaten, kohlenhydrate = kohlenhydratedaten)
             dao.insert(tempData)
         }
     }
@@ -72,7 +71,7 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_second)
         val view: RecyclerView = findViewById(R.id.LebensmittelListe)
-        val db = LebensmittelDatabase.getInstance(applicationContext)
+        val db = lebensmittelDatabase.getInstance(applicationContext)
         val dao = db.temperatureDao
         val adapter = LebensmittelAdapter(dao.getAllLocations())
         view.adapter = adapter
@@ -88,7 +87,7 @@ class LebensmittelViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }
 // the following class is used to create an adapter that is used by the ViewHolder to update the display of the data -------//
 // from the database in the second activity --------------------------------------------------------------------------------//
-class LebensmittelAdapter(private val lebensmittelList: List<LebensmittelData>) :
+class LebensmittelAdapter(private val lebensmittelList: List<lebensmittelData>) :
     RecyclerView.Adapter<LebensmittelViewHolder>() {
     // the following functions are used to create the ViewHolder ---------------------------------------------------------------//
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LebensmittelViewHolder {

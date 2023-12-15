@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.temperatureexample.data
+package APP.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

@@ -1,4 +1,4 @@
-package at.ac.fhcampuswien.temperatureexample.data
+package APP.data
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -6,22 +6,22 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface LebensmittelDao {
+interface lebensmittelDao {
 
     @Insert
-    fun insert(data: LebensmittelData)
+    fun insert(data: lebensmittelData)
 
     @Update
-    fun update(data: LebensmittelData)
+    fun update(data: lebensmittelData)
 
     @Query("SELECT * FROM lebensmittel_data WHERE dataId = :key")
-    fun getById(key: Long): LebensmittelData?
+    fun getById(key: Long): lebensmittelData?
 
     @Query("SELECT * FROM lebensmittel_data WHERE lebensmittel = :lebensmittel")
-    fun getByLebensmittel(lebensmittel: String): LebensmittelData?
+    fun getByLebensmittel(lebensmittel: String): lebensmittelData?
 
     @Query("SELECT * FROM lebensmittel_data")
-    fun getAllLocations(): List<LebensmittelData>
+    fun getAllLocations(): List<lebensmittelData>
 
     @Query("DELETE from lebensmittel_data WHERE dataId= :key")
     fun delete(key:Long): Int
