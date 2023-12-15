@@ -5,7 +5,7 @@
     <data>
         <variable
             name="temp"
-            type="at.ac.fhcampuswien.temperatureexample.data.LebensmittelData" />
+            type="at.ac.fhcampuswien.LebensmittelDatabase.data.LebensmittelData" />
     </data>
     <!-- Path: app/src/main/res/layout/activity_main.xml constraint layout-->
 <androidx.constraintlayout.widget.ConstraintLayout
